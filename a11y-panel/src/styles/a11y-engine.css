@@ -1,0 +1,90 @@
+:root {
+  --a11y-font-scale: 1;
+}
+
+body {
+  font-size: calc(16px * var(--a11y-font-scale)) !important;
+  transition:
+    filter 0.4s ease,
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+body.a11y-high-contrast {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+body.a11y-high-contrast *:not(.a11y-widget):not(.a11y-widget *) {
+  background-color: transparent !important;
+  color: #ffff00 !important;
+  border-color: #ffff00 !important;
+}
+
+body.a11y-monochrome {
+  filter: grayscale(100%) !important;
+}
+
+body.a11y-invert {
+  filter: invert(100%) hue-rotate(180deg) !important;
+  background-color: #111 !important;
+}
+
+body.a11y-invert .a11y-widget {
+  filter: invert(100%) hue-rotate(180deg) !important;
+}
+
+body.a11y-dyslexia
+  *:not(.a11y-widget):not(.a11y-widget *):not(.material-icons):not(.fa) {
+  font-family: "Comic Sans MS", "OpenDyslexic", sans-serif !important;
+}
+
+body.a11y-letter-spacing *:not(.a11y-widget):not(.a11y-widget *) {
+  letter-spacing: 0.12em !important;
+}
+
+body.a11y-text-align-left *:not(.a11y-widget):not(.a11y-widget *) {
+  text-align: left !important;
+}
+
+body.a11y-highlight-links a:not(.a11y-widget *) {
+  background-color: rgba(255, 255, 0, 0.3) !important;
+  border-bottom: 2px solid #2563eb !important;
+  font-weight: bold !important;
+  text-decoration: none !important;
+}
+
+body.a11y-highlight-headings h1,
+body.a11y-highlight-headings h2,
+body.a11y-highlight-headings h3,
+body.a11y-highlight-headings h4,
+body.a11y-highlight-headings h5,
+body.a11y-highlight-headings h6 {
+  border: 2px dashed #ef4444 !important;
+  padding: 4px !important;
+  border-radius: 4px !important;
+  position: relative;
+}
+
+body.a11y-big-cursor,
+body.a11y-big-cursor * {
+  cursor:
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><path fill="%230f172a" stroke="%23ffffff" stroke-width="2" d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87c.45 0 .67-.54.35-.85L6.35 2.86a.5.5 0 0 0-.85.35Z"/></svg>'),
+    auto !important;
+}
+
+body.a11y-bold-text *:not(.a11y-widget):not(.a11y-widget *) {
+  font-weight: 700 !important;
+}
+
+body.a11y-readable-font
+  *:not(.a11y-widget):not(.a11y-widget *):not(.material-icons):not(.fa) {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+body.a11y-line-height *:not(.a11y-widget):not(.a11y-widget *) {
+  line-height: 2 !important;
+}
+
+body.a11y-word-spacing *:not(.a11y-widget):not(.a11y-widget *) {
+  word-spacing: 0.35em !important;
+}
